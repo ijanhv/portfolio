@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@300;500&family=Instrument+Sans:wght@400;600&display=swap");
+
+* {
+  font-family: "Instrument Sans", sans-serif;
+
+}
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,4 +31,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+.gradient {
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
 }
