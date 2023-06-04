@@ -80,12 +80,13 @@ const Experience = () => {
           <ul className="w-full flex flex-col items-start justify-between lgl:ml-4">
             {experience.map((experienceItem, i) => (
               <motion.div 
+              key={i}
               initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 * i }}
               >
               <ExperienceItem
-                key={i}
+               
                 position={experienceItem.position}
                 company={experienceItem.company}
                 duration={experienceItem.duration}

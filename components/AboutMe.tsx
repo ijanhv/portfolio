@@ -27,7 +27,7 @@ const AboutMe = () => {
             nulla quis, atque perspiciatis Perferendis nulla quis, atque
             perspiciatis
           </p>
-          <p>Here are few Technologies I've been working with recently:</p>
+          <p>Here are few Technologies I&apos;ve been working with recently:</p>
           <ul className="max-w-[450px] text-sm font-titleFont grid grid-cols-2 gap-2 mt-6">
             <li className="flex items-center gap-2">
               <span className="text-textGreen">
