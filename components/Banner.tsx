@@ -14,15 +14,17 @@ const Banner = () => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        className="text-lg font-titleFont tracking-wide text-textGreen"
+        className="text-lg font-bodyFont tracking-wide text-textGreen"
       >
+    
+
         Hi, my name is
       </motion.h3>
       <motion.h1
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.7 }}
-        className="text-4xl lgl:text-6xl font-titleFont font-semibold flex flex-col"
+        className="text-4xl lgl:text-6xl font-titleFont font-bold flex flex-col"
       >
         Janhavi Patil. I&apos;m a {" "}
         <span className="text-textDark mt-2 lgl:mt-4">
@@ -41,7 +43,7 @@ const Banner = () => {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.8 }}
-        className="text-base md:max-w-[650px] text-textDark font-medium"
+        className="text-base font-bodyFont md:max-w-[650px] text-textDark font-medium"
       >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
         consequuntur tenetur veniam a voluptates eum delectus doloribus sunt

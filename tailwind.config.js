@@ -23,10 +23,7 @@ module.exports = {
         lgl: '1024px',
         xl: '1280px'
       },
-      fontFamily: {
-        bodyFont: ["Montserrat", "sans-serif"],
-        titleFont: ["Inter", "sans-serif"],
-      },
+      
       boxShadow: {
         navbarShadow: "0 10px 30px -10px rgba(2, 12, 27, 0.7)",
       },
@@ -48,6 +45,11 @@ module.exports = {
         circularDark: 'repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #f5f5f5 5px, #f5f5f5 100px);'
       }
       
+    },
+    fontFamily: {
+      playfair: ['Playfair', "serif"],
+      bodyFont: ["Montserrat", "sans-serif"],
+      titleFont: ["Poppins", "sans-serif"],
     },
   },
   plugins: [],

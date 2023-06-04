@@ -13,7 +13,15 @@ const ExperienceItem = ({
   const ref = useRef(null);
 
   return (
-    <li
+    <motion.li
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.5 }}
+    transition={{ delay: 0.4, duration: 0.5 }}
+    variants={{
+      hidden: { opacity: 0, y: 50 },
+      visible: { opacity: 1, y: 0 },
+    }}
       ref={ref}
       className="my-8 first:mt-0 last:mb-0 w-[75%] mx-auto flex flex-col items-center justify-between"
     >
@@ -27,7 +35,7 @@ const ExperienceItem = ({
         </span>
         <p className="font-medium w-full my-2 opacity-75">{description}</p>
       </div>
-    </li>
+    </motion.li>
   );
 };
 
@@ -67,6 +75,7 @@ const Experience = () => {
 
   return (
     <section
+    
       id="about"
       className="max-w-containerSmall mx-auto py-10 lgl:py-32 flex flex-col gap-8"
     >
@@ -77,16 +86,25 @@ const Experience = () => {
             style={{ scaleY: scrollYProgress }} 
             className="absolute left-8 top-0 w-[4px] h-full mr-0 origin-top bg-textDark"
           />
-          <ul className="w-full flex flex-col items-start justify-between lgl:ml-4">
+          <motion.ul 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          className="w-full flex flex-col items-start justify-between lgl:ml-4">
             {experience.map((experienceItem, i) => (
               <motion.div 
               key={i}
-              initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 * i }}
+              // initial={{ opacity: 0 }}
+              //   animate={{ opacity: 1 }}
+              //   transition={{ duration: 0.5, delay: 0.2 }}
               >
               <ExperienceItem
-               
+
                 position={experienceItem.position}
                 company={experienceItem.company}
                 duration={experienceItem.duration}
@@ -95,7 +113,7 @@ const Experience = () => {
               />
               </motion.div>
             ))}
-          </ul>
+          </motion.ul>
         </div>
       </div>
     </section>

@@ -8,6 +8,21 @@ import dineout from "../public/assets/dineout.png";
 import github from "../public/assets/GitHub-Mark.png";
 import Image from "next/image";
 import SectionTitle from "./SectionTitle";
+import jkrypt from "../public/assets/jkrypt.png";
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const projectVariant = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1 },
+};
 
 const ProjectCard = ({
   index,
@@ -18,9 +33,9 @@ const ProjectCard = ({
   source_code_link,
 }: any) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}
-    whileHover={{ scale: 1.05 }}
-    className="cursor-pointer hover:shadow-xl transition-all duration-300"
+    <motion.div
+      variants={projectVariant}
+      className="cursor-pointer hover:shadow-xl transition-all duration-300"
     >
       <div className="border border-b-4 hover:border-[#78ffdf] border-textGreen p-5 rounded-2xl sm:w-[350px] w-full">
         <div className="relative w-full h-[230px]">
@@ -31,22 +46,21 @@ const ProjectCard = ({
             alt="project_image"
             className="w-full h-full object-cover rounded-2xl"
           />
-
-          
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px] flex gap-2">{name}
-          <motion.button
-          initial={{ y: -10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="px-5 items-center rounded-full text-textGreen  text-[13px] hover:bg-hoverColor transform hover:scale-110 transition-all duration-300"
-          >
-          Link
-          </motion.button>
+          <h3 className="text-white font-bold text-[24px] flex gap-2">
+            {name}
+            <motion.button
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="px-5 items-center rounded-full text-textGreen  text-[13px] hover:bg-hoverColor transform hover:scale-110 transition-all duration-300"
+            >
+              Link
+            </motion.button>
           </h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <p className="mt-2 text-secondary font-bodyFont text-[13px]">{description}</p>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -67,12 +81,13 @@ const ProjectCard = ({
 const Projects = () => {
   const projects = [
     {
-      name: "Car Rent",
+      name: "SkillBrisk",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "A platform for freelancers and clients to connect with each other, allowing sellers to post their gigs and Implemented features that make it easy for freelancers to create a profile, showcase their skills and experience",
+
       tags: [
         {
-          name: "react",
+          name: "nextjs",
           color: "blue-text-gradient",
         },
         {
@@ -85,49 +100,74 @@ const Projects = () => {
         },
       ],
       image: skillbrisk,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/ijanhv/skillbrisk",
     },
     {
-      name: "Job IT",
+      name: "DineOut",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "DineOut is a delightful mobile application designed to enhance your dining experience. With its user-friendly interface and powerful features, DineOut makes it easy for you to discover, explore, and enjoy a wide range of dining options",
       tags: [
         {
-          name: "react",
+          name: "fluuter",
           color: "blue-text-gradient",
         },
         {
-          name: "restapi",
+          name: "firebase",
           color: "green-text-gradient",
         },
         {
-          name: "scss",
+          name: "dart",
           color: "pink-text-gradient",
         },
       ],
       image: dineout,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/ijanhv/Dineout_App",
     },
     {
-      name: "Trip Guide",
+      name: "MediPlus",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Utilized machine learning algorithms to predict diseases such as diabetes, heart disease, and breast cancer",
       tags: [
         {
-          name: "nextjs",
+          name: "machine learning",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
+          name: "tailwindcss",
           color: "green-text-gradient",
         },
         {
-          name: "css",
+          name: "typescript",
           color: "pink-text-gradient",
         },
       ],
       image: skillbrisk,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://github.com/ijanhv/MediPlus",
+    },
+    {
+      name: "JKrypt",
+      description:
+      "Utilized machine learning algorithms to predict diseases such as diabetes, heart disease, and breast cancer",
+      tags: [
+        {
+          name: "blokchain",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "tailwindcss",
+          color: "green-text-gradient",
+        },
+        {
+          name: "solidity",
+          color: "pink-text-gradient",
+        },
+        {
+          name: "smart contracts",
+          color: "green-text-gradient",
+        },
+      ],
+      image: jkrypt,
+      source_code_link: "https://github.com/ijanhv/Cryptocurrency_App",
     },
   ];
 
@@ -142,10 +182,7 @@ const Projects = () => {
         </motion.div>
 
         <div className="w-full flex">
-          <motion.p
-            variants={fadeIn("", "", 0.1, 1)}
-            className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
-          >
+          <motion.p className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
             Following projects showcases my skills and experience through
             real-world examples of my work. Each project is briefly described
             with links to code repositories and live demos in it. It reflects my
@@ -154,11 +191,18 @@ const Projects = () => {
           </motion.p>
         </div>
 
-        <div className="mt-20 flex flex-wrap gap-7">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mt-20 flex flex-wrap gap-7"
+        >
           {projects.map((project, index) => (
             <ProjectCard key={`project-${index}`} index={index} {...project} />
           ))}
-        </div>
+        </motion.div>
       </section>
     </>
   );
