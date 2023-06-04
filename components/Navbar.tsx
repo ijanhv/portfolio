@@ -1,65 +1,94 @@
 import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { BsArrowUpRight } from "react-icons/bs"
 
 const Navbar = () => {
-  const navLinks = [
-    { name: "Skills", route: "#skills" },
-    { name: "Projects", route: "#projects" },
-    { name: "Work Experience", route: "#work" },
-    { name: "Contact Me", route: "#contact" },
-  ];
-
   return (
-    <nav className="fixed w-full z-30 top-0 text-white gradient">
-      <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
-        <div className="pl-4 flex items-center">
-          <a
-            className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-            href="#"
+    <div className="w-full shadow-navbarShadow h-20 lg:h-[12vh] sticky top-0 z-50 bg-bodyColor px-4">
+      <div className="max-w-container h-full mx-auto py-1 font-titleFont flex items-center justify-between">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="flex items-center text-3xl font-bold text-primaryColor">
+            <span className="hexagon-border">J</span>
+          </h1>
+        </motion.div>
+        <div className="hidden mdl:inline-flex items-center gap-7">
+          <ul className="flex text-[13px] gap-7">
+            <Link
+              href="#home"
+              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+            >
+              <motion.li
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.1 }}
+              >
+                Home
+              </motion.li>
+            </Link>
+            <Link
+              href="#about"
+              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+            >
+              <motion.li
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.1, delay: 0.1 }}
+              >
+                About
+              </motion.li>
+            </Link>
+            <Link
+              href="#about"
+              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+            >
+              <motion.li
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.1, delay: 0.2 }}
+              >
+                Projects
+              </motion.li>
+            </Link>
+            <Link
+              href="#about"
+              className="flex items-center gap-1 font-medium text-textDark hover:text-textGreen cursor-pointer duration-300 nav-link"
+            >
+              <motion.li
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.1, delay: 0.3 }}
+              >
+                Experience
+              </motion.li>
+            </Link>
+          </ul>
+          <a href="/assets/Janhavi_Patil_Resume__Final (1).pdf" target="_blank">
+          <motion.button
+          initial={{ y: -10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="px-4 py-2 items-center rounded-full text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor transform hover:scale-110 transition-all duration-300"
           >
-            {/* <!--Icon from: http://www.potlabicons.com/ --> */}
-            Janhavi
+            <span className="flex items-center gap-1 ">Resume <BsArrowUpRight /> </span>
+          </motion.button>
           </a>
         </div>
-        <div className="block lg:hidden pr-4">
-          <button
-            id="nav-toggle"
-            className="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-          >
-            <svg
-              className="fill-current h-6 w-6"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-            </svg>
-          </button>
-        </div>
-        <div
-          className="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
-          id="nav-content"
-        >
-          <ul className="list-reset lg:flex justify-end flex-1 items-center">
-            {navLinks.map((link, i) => (
-              <li className="mr-3" key={i}>
-                <a
-                  className="inline-block py-2 px-4 text-white no-underline"
-                  href="#"
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <button
-            id="navAction"
-            className="mx-auto lg:mx-0  bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-          >
-            Contact Me
-          </button>
+        {/* Small Icon section */}
+        <div className="w-6 h-5 flex flex-col justify-between items-center mdl:hidden text-4xl text-textGreen cursor-pointer overflow-hidden group">
+            <span className="w-full h-[2px] bg-textGreen inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300">
+            </span>
+            <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300">
+            </span>
+            <span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300">
+            </span>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 
