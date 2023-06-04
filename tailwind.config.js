@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     maxWidth: {
       container: '1440px',
-      contetContainer: '1140px',
+      contentContainer: '1140px',
       containerSmall: '1024px',
       containerxs: '768px'
     },
@@ -36,7 +36,18 @@ module.exports = {
         textLight: "#ccd6f6",
         textDark: "#8892b0",
         hoverColor: "rgba(100, 255, 218, 0.1)",
+        primary: "#050816",
+        secondary: "#aaa6c3",
+        tertiary: "#151030",
       },
+      animation: {
+        'spin-slow': 'spin 8s linear infinite'
+      },
+      backgroundImage: {
+        circularLight: 'repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #f5f5f5 5px, #f5f5f5 100px;',
+        circularDark: 'repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #f5f5f5 5px, #f5f5f5 100px);'
+      }
+      
     },
   },
   plugins: [],
